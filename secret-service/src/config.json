@@ -1,0 +1,14 @@
+{
+	"mongoService": "http://mongo-service:3000",
+	"collection": "secret",
+	"database": "default",
+    "message": {
+        "secretCreated": "Successfully created secret."
+    },
+    "error": {
+        "somethingWentWrong": "Sorry something went wrong while processing your request, please try again later.",
+        "secretAlreadyExists": "Unable to create secret, a secret for that account ID already exists.",
+        "secretNotFoundForAccountId": "Could not find a secret for that account ID"
+    }
+}
+

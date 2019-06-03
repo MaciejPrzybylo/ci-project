@@ -1,0 +1,23 @@
+{
+  "name": "aes-encryption-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/goat-gateway/aes-encryption-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/goat-gateway/aes-encryption-service/issues"
+  },
+  "homepage": "https://gitlab.com/goat-gateway/aes-encryption-service#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}

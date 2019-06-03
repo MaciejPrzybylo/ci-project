@@ -1,0 +1,7 @@
+{
+    "mongoService": "http://mongo-service:3000",
+    "aesEncryptionService": "http://aes-encryption-service:3000",
+    "database": "default", 
+    "collection": "session"
+}
+

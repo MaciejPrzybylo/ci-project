@@ -1,0 +1,26 @@
+{
+    "service": {
+	    "mongoService": {
+            "url": "http://mongo-service:3000",
+            "findOne": "/find-one",
+            "insertOne": "/insert-one"
+        },
+        "secretService": {
+            "url": "http://secret-service:3000",
+            "create": "/create"
+        }
+    },
+	"mongoService": "http://mongo-service:3000",
+	"collection": "default",
+	"database": "account",
+    "secretService": "http://secret-service:3000",
+    "message": {
+        "accountCreated": "Your account was successfully created, please check for a confirmation email."
+    },
+    "error": {
+        "somethingWentWrong": "Something went wrong while processing your request, please try again later.",
+        "accountNotFound": "An account with that email could not be found.",
+        "accountAlreadyExists": "An account with that email already exists."
+    }
+}
+

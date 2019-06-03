@@ -1,0 +1,36 @@
+{
+    "service": {
+        "accountService": {
+            "url": "http://account-service:3000",
+            "findByEmail": "/find-by-email",
+            "create": "/create",
+            "update": "/update"
+        },
+        "secretService": {
+            "url": "http://secret-service:3000",
+            "validate": "/validate"
+        },
+        "emailService": {
+            "url": "http://email-service:3000",
+            "sendActivationEmail": "/send-activation-email"
+        },
+        "aesEncryptionService": {
+            "url": "http://aes-encryption-service:3000",
+            "decrypt": "/decrypt"
+        },
+        "sessionTokenService": {
+            "url": "http://session-token-service:3000",
+            "create": "/create",
+            "find": "/find"
+        }
+    },
+    "message": {
+        "registrationComplete": "Registration complete, please check your email to activate your account."
+    },
+    "error": {
+        "authenticationFailure": "Failed to authenticate, please check your email and password before trying again.",
+        "accountNotActivated": "This account needs to be activated, please check your email.",
+        "somethingWentWrong": "Something went wrong.",
+        "invalidSessionToken": "Provided session token is invalid."
+    }
+}

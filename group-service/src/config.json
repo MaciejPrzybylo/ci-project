@@ -1,0 +1,6 @@
+{
+	"mongoService": "http://mongo-service:3000",
+	"collection": "default",
+	"database": "group"
+}
+

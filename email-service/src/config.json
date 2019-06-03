@@ -1,0 +1,15 @@
+{
+    "service": {
+        "aesEncryptionService": {
+            "url": "http://aes-encryption-service:3000",
+            "encrypt": "/encrypt"
+        }
+    },
+    "message": {
+        "emailSent": "Email sent sucessfully."
+    },
+    "error": {
+        "somethingWentWrong": "Something went wrong while processing your request, please try again later."
+    }
+}
+
