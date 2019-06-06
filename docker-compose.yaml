@@ -21,7 +21,10 @@ services:
     depends_on:
     - mongo-service
     - aes-encryption-service
-
+    environment:
+    - GMAIL_USER=ilovedocker123@gmail.com
+    - GMAIL_PASS=ilovedocker1!
+    - SERVICE_NAME="CI project"
   secret-service:
     image: maciejprzybylo95/secret-service
     container_name: secret-service
@@ -56,6 +59,8 @@ services:
     - account-service
     - email-service
     - session-token-service
+    environment:
+    - ACTIVATION_LINK=http://${ACTIVATION_IP}/authentication/api/activate
 
   authentication-client:
     image: maciejprzybylo95/authentication-client
