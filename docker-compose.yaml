@@ -1,0 +1,79 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+ 
+  mongo-service:
+    image: maciejprzybylo95/mongo-service
+    container_name: mongo-service
+    depends_on:
+    - mongo
+
+  aes-encryption-service:
+    image: maciejprzybylo95/aes-encryption-service
+    container_name: aes-encryption-service
+
+  email-service:
+    image: maciejprzybylo95/email-service
+    container_name: email-service
+    depends_on:
+    - mongo-service
+    - aes-encryption-service
+
+  secret-service:
+    image: maciejprzybylo95/secret-service
+    container_name: secret-service
+    depends_on:
+    - mongo-service
+
+  account-service:
+    image: maciejprzybylo95/account-service
+    container_name: account-service
+    depends_on:
+    - mongo-service
+    - secret-service
+
+  session-token-service:
+    image: maciejprzybylo95/session-token-service
+    container_name: session-token-service
+    depends_on:
+    - mongo-service
+    - aes-encryption-service
+
+  dashboard-service:
+    image: maciejprzybylo95/dashboard-service
+    container_name: dashboard-service
+    depends_on:
+    - account-service
+    - session-token-service
+
+  authentication-service:
+    image: maciejprzybylo95/authentication-service
+    container_name: authentication-service
+    depends_on:
+    - account-service
+    - email-service
+    - session-token-service
+
+  authentication-client:
+    image: maciejprzybylo95/authentication-client
+    container_name: authentication-client
+
+  dashboard-client:
+    image: maciejprzybylo95/dashboard-client
+    container_name: dashboard-client
+
+  gateway:
+    image: maciejprzybylo95/gateway
+    container_name: gateway
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    depends_on:
+    - authentication-service
+    - authentication-client
+    - dashboard-service
+    - dashboard-client
