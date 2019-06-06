@@ -53,7 +53,7 @@ alter the ACTIVATION_IP environment variable to match your IP address
 ```
 export ACTIVATION_IP= [your IP] 
 ```
-run the .yaml (make sure you are in the GatewayProject directory)
+run the docker-compose.yaml 
 ```
 docker-compose up -d
 ```
