@@ -85,3 +85,6 @@ docker pull maciejprzybylo95/mongo-service
 * •	maciejprzybylo95/role-service
 * •	maciejprzybylo95/group-service
 
+### 6. Project Automation
+Further project automation and moving the project onto kubernetes can be found here [https://github.com/MaciejPrzybylo/ci-project-kube](https://github.com/MaciejPrzybylo/ci-project-kube).
+
